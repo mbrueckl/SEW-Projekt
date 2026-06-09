@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class main extends Application {
+public class Main extends Application {
     static Scene scene;
     public static void main(String[] args) {
         launch(args);
@@ -25,8 +25,8 @@ public class main extends Application {
         //primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.show();
     }
-    public void changeScene(String fxml) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource(fxml));
+    public static void changeScene(String fxml) throws IOException {
+        Parent root = FXMLLoader.load(Main.class.getResource(fxml));
         scene = new Scene(root);
     }
 }

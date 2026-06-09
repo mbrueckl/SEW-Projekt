@@ -3,7 +3,6 @@
 ## Mulitplayer Local
 - TicTAcToe
 - Schiffe versenken
-- Schere Stein Papier
 - 4 Gewinnt
 - Hangman
 - Dame
@@ -14,6 +13,7 @@
 - Minesweeper
 - Memory
 - Black Jack
+- Schere Stein Papier
 
 ## Maybe Game
 - Hände schlagen Game
