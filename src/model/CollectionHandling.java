@@ -7,12 +7,25 @@ import java.util.ArrayList;
 
 public class CollectionHandling {
 
-    ArrayList<User> userList = new ArrayList<>();
+    private static ArrayList<User> userList = new ArrayList<>();
 
     public void addUser(String password, String username){
         String hasPas = hashString(password);
 
         userList.add(new User(hasPas, username));
+    }
+    
+    public User findUser(String username){
+        User temp = null;
+
+        for (int i = 0; i < userList.size(); i++) {
+            if (userList.get(i).getUsername().equals(username)){
+                temp = userList.get(i);
+                i= userList.size();
+            }
+        }
+        
+        return temp;
     }
 
     public String hashString(String s){

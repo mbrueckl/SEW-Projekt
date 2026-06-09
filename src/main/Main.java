@@ -2,16 +2,13 @@ package main;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
-public class main extends Application {
+public class Main extends Application {
     static Scene scene;
     public static void main(String[] args) {
         launch(args);
@@ -19,7 +16,7 @@ public class main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root= FXMLLoader.load(getClass().getResource("../viewCtrl/home/home.fxml"));
+        Parent root= FXMLLoader.load(getClass().getResource("../viewctrl/home/home.fxml"));
         scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.setTitle("SEW Projekt");
@@ -27,6 +24,7 @@ public class main extends Application {
         //primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.show();
     }
+
     public void changeScene(String fxml) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource(fxml));
         scene = new Scene(root);
