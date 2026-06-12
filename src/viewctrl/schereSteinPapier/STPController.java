@@ -1,4 +1,5 @@
 package viewctrl.schereSteinPapier;
+import javafx.scene.image.Image;
 import main.Main;
 import model.schereSteinPapier.*;
 
@@ -16,7 +17,7 @@ import java.util.ResourceBundle;
 
 public class STPController implements Initializable {
 
-    STPModel model;
+    private STPModel model;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -55,20 +56,22 @@ public class STPController implements Initializable {
     @FXML
     void papier(ActionEvent event) {
         showWinner(3);
+        showChoice(3);
     }
 
     @FXML
     void schere(ActionEvent event) {
         showWinner(1);
+        showChoice(1);
     }
     @FXML
     void stein(ActionEvent event) {
-        showWinner(1);
+        showWinner(2);
+        showChoice(2);
     }
     @FXML
-    void back(ActionEvent event) throws IOException {
+    private void back(ActionEvent event) throws IOException {
         Main.changeScene("/viewCtrl/home/home.fxml");
-
     }
     private void hoverEffect(Button button) {
         button.setOnMouseEntered(e -> button.setStyle("-fx-background-color: #8fd46f;"));
@@ -77,10 +80,32 @@ public class STPController implements Initializable {
     private void showWinner(int userInput){
         if(model.ergebnis(userInput)==1){
             geweinnerAnzeigeL.setText("Gewonnen :D");
+            spielerIV.setImage(new Image("viewCtrl/schereSteinPapier/images/winner.jpg"));
+            botIV.setImage(new Image("viewCtrl/schereSteinPapier/images/loser.jpg"));
         }else if(model.ergebnis(userInput)==-1){
             geweinnerAnzeigeL.setText("Verloren :(");
+            spielerIV.setImage(new Image("viewCtrl/schereSteinPapier/images/loser.jpg"));
+            botIV.setImage(new Image("viewCtrl/schereSteinPapier/images/winner.jpg"));
         }else{
             geweinnerAnzeigeL.setText("Unendschieden :P");
+            spielerIV.setImage(new Image("viewCtrl/schereSteinPapier/images/loser.jpg"));
+            botIV.setImage(new Image("viewCtrl/schereSteinPapier/images/loser.jpg"));
+        }
+    }
+    private void showChoice(int userInput){
+        if(userInput==1){
+            userChoiceIV.setImage(new Image("viewCtrl/schereSteinPapier/images/schere.png"));
+        }else if(userInput==2){
+            userChoiceIV.setImage(new Image("viewCtrl/schereSteinPapier/images/stein.png"));
+        }else {
+            userChoiceIV.setImage(new Image("viewCtrl/schereSteinPapier/images/papier.png"));
+        }
+        if(model.getBotChoice()==1){
+            botChoiceIV.setImage(new Image("viewCtrl/schereSteinPapier/images/schere.png"));
+        }else if(model.getBotChoice()==2){
+            botChoiceIV.setImage(new Image("viewCtrl/schereSteinPapier/images/stein.png"));
+        }else {
+            botChoiceIV.setImage(new Image("viewCtrl/schereSteinPapier/images/papier.png"));
         }
     }
 }
