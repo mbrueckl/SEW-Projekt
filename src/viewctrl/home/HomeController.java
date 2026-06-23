@@ -29,12 +29,15 @@ public class HomeController implements Initializable {
         String usernameInput = benutzernameTF.getText();
         String passwordInput = passwortTF.getText();
         User temp = col.findUser(usernameInput);
-
-        if (temp == null){
-            col.addUser(passwordInput, usernameInput);
-            feedbackLabel.setText("User hinzugefügt!");
-        } else {
-            feedbackLabel.setText("Username existiert bereits!");
+        if(!usernameInput.equals("") | !passwordInput.equals("")) {
+            if (temp == null) {
+                col.addUser(passwordInput, usernameInput);
+                feedbackLabel.setText("User hinzugefügt!");
+            } else {
+                feedbackLabel.setText("Username existiert bereits!");
+            }
+        }else {
+            feedbackLabel.setText("Benutzerfeld und Passwortfeld dürfen nicht leer sein.");
         }
 
     }
@@ -50,7 +53,6 @@ public class HomeController implements Initializable {
             main.changeScene("../viewctrl/gameLauncher/gameLauncher.fxml");
         } else {
             feedbackLabel.setText("Benutzername oder Passwort ist falsch!!!");
-
         }
 
         benutzernameTF.setText("");
