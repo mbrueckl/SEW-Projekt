@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #b4ff94;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewctrl.schereSteinPapier.STPController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #b4ff94;" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewctrl.schereSteinPapier.STPController">
    <children>
       <HBox layoutX="180.0" layoutY="297.0" prefHeight="73.0" prefWidth="239.0" spacing="20.0">
          <children>
