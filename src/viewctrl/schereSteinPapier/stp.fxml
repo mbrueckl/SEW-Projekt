@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #b4ff94;" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewctrl.schereSteinPapier.STPController">
+   <children>
+      <HBox layoutX="180.0" layoutY="297.0" prefHeight="73.0" prefWidth="239.0" spacing="20.0">
+         <children>
+            <Button fx:id="schereB" mnemonicParsing="false" onAction="#schere" style="-fx-background-color: #b4ff94;">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Schere.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="steinB" mnemonicParsing="false" onAction="#stein" style="-fx-background-color: #b4ff94;">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Stein.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="papierB" mnemonicParsing="false" onAction="#papier" style="-fx-background-color: #b4ff94;">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Papier.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+      <ImageView fx:id="spielerIV" fitHeight="150.0" fitWidth="200.0" layoutX="6.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/user.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="botIV" fitHeight="150.0" fitWidth="200.0" layoutX="436.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/bot.jpg" />
+         </image>
+      </ImageView>
+      <Button layoutY="14.0" mnemonicParsing="false" onAction="#back" prefHeight="38.0" prefWidth="74.0" style="-fx-background-color: #b4ff94;" text="⬅">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+      </Button>
+      <Label fx:id="benutzernameL" layoutX="23.0" layoutY="101.0" text="HIER USER">
+         <font>
+            <Font name="Century Gothic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="546.0" layoutY="101.0" text="Bot">
+         <font>
+            <Font name="Century Gothic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="129.0" layoutY="22.0" text="Schere-Stein-Papier!">
+         <font>
+            <Font name="Century Gothic" size="35.0" />
+         </font>
+      </Label>
+      <Label fx:id="geweinnerAnzeigeL" layoutX="270.0" layoutY="179.0" text="xx gewinnt!" />
+      <ImageView fx:id="userChoiceIV" fitHeight="58.0" fitWidth="61.0" layoutX="180.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="botChoiceIV" fitHeight="58.0" fitWidth="61.0" layoutX="368.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

@@ -1,4 +1,4 @@
-package viewctrl.TicTacToe;
+package viewctrl.ticTacToe;
 
 public class TicTacToeController {
 
